@@ -1,0 +1,16 @@
+---
+import { Picture } from "@astrojs/image/components";
+import moonImage from "~/assets/background.png";
+
+const widths = [450, 800, 1200];
+const sizes = "100vw";
+---
+
+
+<Picture
+  class="h-full w-full object-cover overlay"
+  src={moonImage}
+  widths={widths}
+  sizes={sizes}
+  alt=""
+/>

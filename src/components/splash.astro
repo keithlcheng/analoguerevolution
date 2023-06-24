@@ -1,0 +1,79 @@
+---
+import { Picture } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+import logo from "~/assets/logo.png";
+import HeroImage from "~/components/hero-image.astro";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
+---
+
+<style>
+  .writer {
+  font-family: Courier, monospace;
+  display: inline-block;
+  }
+  .writer-text {
+      display: inline-block;
+      overflow: hidden;
+      letter-spacing: 2px;
+      animation: typing 5s steps(30, end), blink .75s step-end infinite;
+      white-space: nowrap;
+      font-size: text-lg;
+      font-weight: 700;
+      border-right: 4px solid red;
+      box-sizing: border-box;
+  }
+
+  @keyframes typing {
+      from { 
+          width: 0% 
+      }
+      to { 
+          width: 100% 
+      }
+  }
+
+  @keyframes blink {
+      from, to { 
+          border-color: transparent 
+      }
+      50% { 
+          border-color: white; 
+      }
+  }
+</style>
+
+
+<section class="relative h-full bg-black bg-blend-darken">
+  <div id="splash-bg-fallback" class="absolute inset-0 opacity-60">
+    <HeroImage/>
+  </div>
+  <div class="relative grid  place-items-center sm:grid-cols-1 absolute left-0 h-screen flex items-center justify-center text-center text-lg">
+      <center><div><Picture
+        src={logo}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="Analogue Revolution: How Feminist Media Changed the World"
+      /> <br>
+      <div class="writer">
+        <div class="writer-text text-xs sm:text-base md:text-xl">
+      How Feminist Media Changed the World
+    </div></center>
+  </div>
+    </div></div>
+  </div>
+
+
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+
+  </style>
+</noscript>
+
