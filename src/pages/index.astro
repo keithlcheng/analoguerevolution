@@ -5,7 +5,7 @@ import Team from "~/components/team.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
+import Map from "~/components/map.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
 
@@ -13,6 +13,8 @@ const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
 const description =
   "A feature documentary by Marusya Bociurkiw";
+
+
 ---
 
 <!DOCTYPE html>
@@ -50,7 +52,10 @@ const description =
     <div class="space-y-20 px-8 py-32">
       <Intro />
       <Team />
-      <Screenings />
+      <Map />
+      <br>
+      <Footer />
   </div>
+  <script src="../../node_modules/preline/dist/preline.js"></script>
   </body>
 </html>

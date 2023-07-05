@@ -1,0 +1,51 @@
+---
+import "@fontsource/inter/variable.css";
+import Header from "~/components/header.astro";
+import Donate from "~/components/donate.astro";
+import "~/styles/index.css";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description =
+  "A feature documentary by Marusya Bociurkiw";
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>Analogue Revolution</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Analogue Revolution" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://github.com/keithlcheng/analoguerevolution/blob/main/src/assets/Cover.jpg?raw=true" />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- initialize theme -->
+    <script is:inline>
+
+
+
+
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header />    
+
+    <Donate />
+</div>
+<script src="../../node_modules/preline/dist/preline.js"></script>
+</body>
+</html>
