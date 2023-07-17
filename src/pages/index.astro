@@ -20,6 +20,7 @@ const description =
 <!DOCTYPE html>
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -57,5 +58,24 @@ const description =
       <Footer />
   </div>
   <script src="../../node_modules/preline/dist/preline.js"></script>
+
+  <script>
+declare global {
+  interface Window {
+    example: any; 
+  }
+}
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user: any) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
   </body>
 </html>
