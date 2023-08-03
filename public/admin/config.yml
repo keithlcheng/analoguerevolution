@@ -3,6 +3,7 @@ local_backend: true
 backend: # The two following lines need to be indented
   name: git-gateway # The authentication method we use for Netlify CMS
   branch: main # Branch to update when we push our content (it can be any branch in our repo)
+  repo: <https://github.com/keithlcheng/analoguerevolution>
 
 # Do not indent these lines
 media_folder: "static/uploads" # Exact path where we store the uploaded media
