@@ -2,6 +2,7 @@ local_backend: true
 
 backend:
   name: git-gateway
+ proxy_url: http://localhost:8081/api/v1
   branch: main # Branch to update (optional; defaults to master)
 
 publish_mode: editorial_workflow
